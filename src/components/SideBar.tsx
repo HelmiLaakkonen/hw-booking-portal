@@ -1,40 +1,54 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("username"); // Clear the stored username
+    alert("You have been logged out.");
+    navigate("/");
+  };
   return (
-    <aside className="fixed top-16 left-0 w-64 h-[calc(100vh-4rem)] bg-gray-200 shadow-lg rounded-lg p-4 flex flex-col justify-between">
+    <aside className="font-bold text-sm fixed w-64 h-[calc(100vh-4rem)] bg-gray-200 shadow-lg rounded-lg p-4 flex flex-col justify-between">
       <nav className="space-y-4">
-        <a
-          href="#"
-          className="block py-2 px-4 bg-gray-300 rounded hover:bg-gray-400"
-        >
+        <Link to="/" className="block py-2 px-4  rounded hover:text-cyan-900">
           Dashboard
-        </a>
-        <a
-          href="#"
-          className="block py-2 px-4 bg-gray-300 rounded hover:bg-gray-400"
+        </Link>
+        <Link
+          to="/devices"
+          className="block py-2 px-4  rounded hover:text-cyan-900"
         >
           Devices
-        </a>
-        <a
-          href="#"
-          className="block py-2 px-4 bg-gray-300 rounded hover:bg-gray-400"
+        </Link>
+        <Link
+          to="/usage-logs"
+          className="block py-2 px-4  rounded hover:text-cyan-900"
         >
           Usage Logs
-        </a>
-        <a
-          href="#"
-          className="block py-2 px-4 bg-gray-300 rounded hover:bg-gray-400"
+        </Link>
+        <Link
+          to="/settings"
+          className="block py-2 px-4  rounded hover:text-cyan-900"
         >
           Settings
-        </a>
+        </Link>
       </nav>
       <div className="space-y-2">
-        <button className="w-full py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600">
+        <button className="text-left w-full py-2 px-4 rounded hover:text-cyan-900">
           Support Center
         </button>
-        <button className="w-full py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600">
-          Log out
+        <button
+          onClick={handleLogout}
+          className="text-left w-full py-2 px-4 rounded hover:text-cyan-900"
+        >
+          <Link
+            to="/login"
+            className="block py-2 px-4  rounded hover:text-cyan-900"
+          >
+            Log out
+          </Link>
         </button>
       </div>
     </aside>
