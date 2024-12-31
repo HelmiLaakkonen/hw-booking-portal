@@ -8,7 +8,7 @@ const LogIn = () => {
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    // For simplicity, assume username = "admin" and password = "password"
+    // Hardcoded username : Admin password: password login credentials
     if (username === "admin" && password === "password") {
       alert("Login successful!");
       localStorage.setItem("username", username); // Store username for display in NavBar
@@ -20,7 +20,7 @@ const LogIn = () => {
 
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
-      <div className="bg-white p-6 rounded shadow-md w-80">
+      <div className="bg-white p-6 rounded-lg shadow-md w-80">
         <h2 className="text-2xl font-bold mb-4 text-center">Log In</h2>
         <div className="mb-4">
           <label htmlFor="username" className="block text-sm font-medium mb-1">

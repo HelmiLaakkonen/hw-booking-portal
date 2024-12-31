@@ -16,7 +16,9 @@ const NavBar: React.FC = () => {
           </>
         ) : (
           <a href="/login" className="hover:underline font-medium">
-            Username
+            <div className="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center">
+              <span className="text-sm font-semibold">👤</span>
+            </div>
           </a>
         )}
       </div>

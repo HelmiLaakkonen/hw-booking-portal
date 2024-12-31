@@ -22,7 +22,6 @@ const Home = () => {
       qtVersion: "5.12",
       status: "Unavailable",
     },
-    // Add more devices if needed
   ];
 
   const deviceTypes = ["Type A", "Type B"];
