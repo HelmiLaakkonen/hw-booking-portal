@@ -30,6 +30,6 @@ To start the development server:
 ```bash
 npm run dev
 ```
-This will launch the application on `http://localhost:3000`.
+This will launch the application on `http://localhost:3000` (or similar localhost address).
 
 Author: Helmi Laakkonen
